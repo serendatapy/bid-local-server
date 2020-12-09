@@ -4,9 +4,12 @@ type Item {
   name: String!
   minPrice: Int!
   description: String
-  picUrl1: Upload
-  picUrl2: Upload
-  picUrl3: Upload
+  picUrl1: String
+  picUrl2: String
+  picUrl3: String
+  auctionEnd: String!
+  minimumBid: Int
+  bidder: ID
   user: User!
   category: Category
 }
@@ -18,6 +21,7 @@ input ItemUpdate {
   picUrl1: String
   picUrl2: String
   picUrl3: String
+  auctionEnd: String
   categoryId: ID
 }
 
@@ -27,9 +31,12 @@ extend type Query {
 }
 
 extend type Mutation {
-  create_item(userId: ID!,item: ItemUpdate!): Item!
-  delete_item_by_id(id: ID!): Boolean!
-  update_item(itemId:ID!,item:ItemUpdate!): Item!
+  create_item(item: ItemUpdate!): Item!
+  delete_item_by_id(itemId: ID!): Boolean!
+  update_item(itemId:ID!, item:ItemUpdate!): Item!
+  place_a_bid(itemId:ID!, biddingPrice: Int): Item
 }
-
+extend type Subscription {
+    bidPlaced: Item
+  }
 `;

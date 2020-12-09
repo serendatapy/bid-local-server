@@ -26,6 +26,7 @@
   "dependencies": {
     "apollo-server": "^2.19.0",
     "apollo-server-express": "^2.19.0",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cloudinary": "^1.23.0",
     "cors": "^2.8.5",
@@ -33,10 +34,11 @@
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "graphql": "^15.4.0",
+    "graphql-resolvers": "^0.4.2",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.6",
-    "pg": "^8.5.1",
     "prettier": "^2.2.1",
     "sequelize": "^5.22.3",
     "uuid": "^8.3.1"
